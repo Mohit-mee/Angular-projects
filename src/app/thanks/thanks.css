@@ -1,0 +1,18 @@
+.thankss {
+    height: 570px;
+    width: 100%;
+    background-image: url("C:\\Users\\asus\\Downloads\\bye.jpg");
+    background-size: cover;
+
+}
+
+#heading1 {
+    padding-top: 200px;
+    margin-left: 50px;
+    color: white;
+}
+
+#heading2 {
+    margin-left: 60px;
+    color: white;
+}

@@ -1,0 +1,44 @@
+#txt {
+    padding-top: 70px;
+    padding-left: 25px;
+    font-size: medium;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+#btn {
+    margin-left: 120px;
+    margin-top: 30px;
+    border-radius: 10px;
+    height: 40px;
+    width: 150px;
+    background-color: white;
+    border: none;
+}
+
+#btn:hover {
+    cursor: pointer;
+    background-color: grey;
+    transition: 0.5s;
+    box-shadow: 2px 2px 2px;
+}
+
+.homee {
+    background-image: url("C:\\angular\\my-app\\superman.jpg");
+    background-size: cover;
+    height: 560px;
+    width: 100%;
+
+}
+
+.home-sub {
+    background-color: transparent;
+    height: 300px;
+    width: 400px;
+    position: absolute;
+    top: 150px;
+    left: 180px;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    border: 2px solid black;
+}
