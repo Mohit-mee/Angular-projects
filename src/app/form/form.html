@@ -1,34 +1,34 @@
 <div class="forming">
-    <div id="wrapped">
+    <div class="form-card">
+        <h2 class="title">Registration</h2>
         <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 
-            <div class="name">
-                <label id="namee" for="username">Username:</label>
-                <input id="username" type="text" formControlName="username">
-
-                <!-- Validation Messages -->
+            <div class="field">
+                <label for="username">Username</label>
+                <input id="username" type="text" placeholder="Enter your name" formControlName="username">
                 @if (userForm.get('username')?.touched && userForm.get('username')?.invalid) {
-                <small id="sml1" class="error">*Username must be at least 3 characters.</small>
+                <small class="error">*Username must be at least 3 characters.</small>
                 }
             </div>
 
-            <div class="mail">
-                <label id="maill" for="email">Email:</label>
-                <input id="email" type="email" formControlName="email">
-
+            <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Enter your email" formControlName="email">
                 @if (userForm.get('email')?.touched && userForm.get('email')?.invalid) {
-                <small id="sml2" class="error">*Please enter a valid email address.</small>
+                <small class="error">*Please enter a valid email address.</small>
                 }
             </div>
-            <div class="phone">
-                <label id="phonee" for="phone">Phone:</label>
-                <input id="phone" type="number" formControlName="phone">
+
+            <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" type="number" placeholder="Enter phone number" formControlName="phone">
                 @if (userForm.get('phone')?.touched && userForm.get('phone')?.invalid) {
-                <small id="sml3" class="error">*Please enter a valid phone number.</small>
+                <small class="error">*Please enter a valid phone number.</small>
                 }
             </div>
 
             <button routerLink="/Thanks" id="btnfrm" type="submit" [disabled]="userForm.invalid">Submit</button>
         </form>
+        <button routerLink="/otp" id="btnotp">Verify with OTP</button>
     </div>
 </div>

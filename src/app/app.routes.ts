@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { Form } from './form/form';
 import { Home } from './home/home';
 import { Thanks } from './thanks/thanks'
+import { Otp } from "./otp/otp"
 
 export const routes: Routes = [
     {
@@ -17,4 +18,8 @@ export const routes: Routes = [
         path: "Thanks",
         component: Thanks
     },
+    {
+        path: "otp",
+        component: Otp
+    }
 ];

@@ -1,0 +1,21 @@
+@if (!isCorrect) {
+<div class="con">
+    <div class="con1">
+        <h2 class="title">OTP Verification</h2>
+        <div class="input-group">
+            <label for="phone">Enter OTP :</label>
+            <input type="text" id="phone" placeholder="Enter 4-digit OTP" [(ngModel)]="phoneValue" maxlength="4">
+        </div>
+        <button id="otpsend" (click)="otp()">Verify OTP</button>
+    </div>
+</div>
+}
+
+@if (isCorrect) {
+<div class="con">
+    <div class="verify">
+        <div class="checkmark">&#10003;</div>
+        <p>OTP Verified Successfully!</p>
+    </div>
+</div>
+}
