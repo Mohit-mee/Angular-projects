@@ -3,6 +3,13 @@
     <div class="con1">
         <h2 class="title">OTP Verification</h2>
         <div class="input-group">
+            @if(!isSent){
+            <input type="number" id="num" placeholder="phone">
+            <button id="sendBtn" (click)="otpsent()">Send otp</button>
+            }
+            @if(isSent){
+            <P id="sentOn">Otp sent to your number !!</P>
+            }
             <label for="phone">Enter OTP :</label>
             <input type="text" id="phone" placeholder="Enter 4-digit OTP" [(ngModel)]="phoneValue" maxlength="4">
         </div>
