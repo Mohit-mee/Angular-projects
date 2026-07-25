@@ -156,3 +156,12 @@ form {
 #phone {
     -moz-appearance: textfield;
 }
+
+#back {
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}

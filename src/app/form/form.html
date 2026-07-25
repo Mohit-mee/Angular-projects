@@ -1,5 +1,6 @@
 <div class="forming">
     <div class="form-card">
+        <p routerLink="" id="back"> 🔙 Back</p>
         <h2 class="title">Registration</h2>
         <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
 
@@ -21,8 +22,8 @@
 
             <div class="field">
                 <label for="phone">Phone</label>
-                <input id="phone" type="number" pattern="^[0-9+\- ]+$" placeholder="Enter phone number"
-                    formControlName="phone">
+                <input id="phone" type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '');"
+                    placeholder="Enter phone number" formControlName="phone" maxlength="10">
                 @if (userForm.get('phone')?.touched && userForm.get('phone')?.invalid) {
                 <small class="error">*Please enter a valid phone number.</small>
                 }

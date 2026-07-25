@@ -10,9 +10,9 @@ import { RouterLink } from '@angular/router';
 })
 export class Form {
   userForm = new FormGroup({
-    username: new FormControl('', [Validators.required, Validators.minLength(3)]),
-    email: new FormControl('', [Validators.required, Validators.email]),
-    phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern(/^(?:\+91[-\s]?)?[6-9]\d{9}$/)])
+    username: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern(/\S/)]),
+    email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(/\S/)]),
+    phone: new FormControl('', [Validators.required, Validators.minLength(10), Validators.pattern(/^(?:\+91[-\s]?)?[6-9]\d{9}$/), Validators.pattern(/\S/)])
   });
 
   onSubmit() {

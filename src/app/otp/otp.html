@@ -1,19 +1,32 @@
 @if (!isCorrect) {
-<div class="con">
+<div class="con" [formGroup]="userform">
     <div class="con1">
+        <p id="backotp" routerLink="/forms"> 🔙 Back</p>
         <h2 class="title">OTP Verification</h2>
         <div class="input-group">
             @if(!isSent){
-            <input type="number" id="num" placeholder="phone">
-            <button id="sendBtn" (click)="otpsent()">Send otp</button>
+            <input type="text" oninput="this.value = this.value.replace(/[^0-9]/g, '');" inputmode="numeric"
+                maxlength="10" id="num" placeholder="phone" formControlName="num">
+            @if(userform.get('num')?.invalid && (userform.get('num')?.dirty || userform.get('num')?.touched)){
+            <small id="phoneerr"> Please enter a valid phone number</small>
+            }
+            <button id="sendBtn" (click)="otpsent()" [disabled]="userform.get('num')?.invalid">Send otp</button>
             }
             @if(isSent){
-            <P id="sentOn">Otp sent to your number !!</P>
-            }
+            <p id="sentOn">Otp sent to your number !!</p>
             <label for="phone">Enter OTP :</label>
-            <input type="text" id="phone" placeholder="Enter 4-digit OTP" [(ngModel)]="phoneValue" maxlength="4">
+            <input type="text" id="phone" placeholder="Enter 4-digit OTP" formControlName="phone" maxlength="4">
+            @if(isCorrect == false || userform.get('phone')?.invalid && (userform.get('phone')?.dirty ||
+            userform.get('phone')?.touched)){
+            <small id="otperr" style="color: red; display: block; margin-top: 4px;">Please enter a valid 4-digit
+                OTP</small>
+            }
+
+            }
         </div>
-        <button id="otpsend" (click)="otp()">Verify OTP</button>
+        @if(isSent){
+        <button id="otpsend" (click)="otp()" [disabled]="userform.invalid">Verify OTP</button>
+        }
     </div>
 </div>
 }
