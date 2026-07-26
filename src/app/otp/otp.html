@@ -16,8 +16,8 @@
             <p id="sentOn">Otp sent to your number !!</p>
             <label for="phone">Enter OTP :</label>
             <input type="text" id="phone" placeholder="Enter 4-digit OTP" formControlName="phone" maxlength="4">
-            @if(isCorrect == false || userform.get('phone')?.invalid && (userform.get('phone')?.dirty ||
-            userform.get('phone')?.touched)){
+            @if(isCorrect == false && userform.get('phone')?.invalid && (userform.get('phone')?.dirty ||
+            userform.get('phone')?.touched) || userform.get('phone')?.value ){
             <small id="otperr" style="color: red; display: block; margin-top: 4px;">Please enter a valid 4-digit
                 OTP</small>
             }

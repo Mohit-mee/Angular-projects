@@ -3,7 +3,7 @@ import { Form } from './form/form';
 import { Home } from './home/home';
 import { Thanks } from './thanks/thanks'
 import { Otp } from "./otp/otp"
-
+import { Login } from "./login/login"
 export const routes: Routes = [
     {
         path: "",
@@ -21,5 +21,10 @@ export const routes: Routes = [
     {
         path: "otp",
         component: Otp
+    },
+    {
+        path: "login",
+        component: Login
+
     }
 ];

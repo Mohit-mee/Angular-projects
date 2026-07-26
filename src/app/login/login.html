@@ -1,0 +1,52 @@
+<div class="con" [formGroup]="userform">
+    @if(willLogin == false){
+    <div class="login-card">
+        <a href="/" id="back"> 🔙 Back</a>
+        <h2 class="title">Login</h2>
+        <form>
+            <div class="field">
+                <label for="email">Email</label>
+                <input id="email" type="email" placeholder="Enter your email" required autocomplete="email"
+                    formControlName="email" (input)="isUser = true">
+                @if(userform.get('email')?.invalid && (userform.get('email')?.touched || userform.get('email')?.dirty)){
+                <small id="emailerr">Please enter a valid email</small>
+                }
+
+
+            </div>
+
+            <div class="field">
+                <label for="password">Password</label>
+                <input id="password" type="password" placeholder="Enter your password" required
+                    autocomplete="current-password" formControlName="password" (input)="isUser = true">
+                @if(userform.get('password')?.invalid && (userform.get('password')?.touched ||
+                userform.get('password')?.dirty)){
+                <small id="passworderr">Password must contain 1 uppercase, 1 lowercase, 1 special character, 1 number
+                    and 8 characters</small>
+                }
+
+            </div>
+
+            @if(isUser == false){
+            <small class="error-global">Invalid email or password</small>
+            }
+
+            <button (click)="login()" id="btnlog" type="submit" [disabled]="userform.invalid">Sign In</button>
+        </form>
+
+        <div class="divider">
+            <span>or</span>
+        </div>
+
+        <a href="/otp" id="btnotp">Login with OTP</a>
+
+        <div class="signup-link">
+            Don't have an account? <a href="/forms">Register</a>
+        </div>
+    </div>
+    }
+    @if(willLogin == true){
+    <a routerLink="" id="loggedback"> 🔙 Back</a>
+    <h1 id="logged">You have logged in !!!</h1>
+    }
+</div>
