@@ -31,4 +31,5 @@ export class Login {
       console.log('Login failed')
     }
   }
+
 }
